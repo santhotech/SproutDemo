@@ -1,6 +1,11 @@
 /**
  * @author santhosh
  */
+
+Sproutdemo.optionController = SC.ObjectController.create({
+  	contentBinding: SC.Binding.single('Sproutdemo.menuController.selection'),
+  });
+
 Sproutdemo.menuController = SC.ArrayController.create({
 
   content: [

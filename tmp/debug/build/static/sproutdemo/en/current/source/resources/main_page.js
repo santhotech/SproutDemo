@@ -67,13 +67,20 @@ Sproutdemo.mainPage = SC.Page.design({
 
         bottomRightView: SC.View.design({
           backgroundColor: 'white',
-          
+          layout: {top:80, left:60},
+			classNames: 'chkBorder',
+			contentBinding: 'Sproutdemo.optionController.content',
+						
+			contentDidChange: function() { 			
+			var content = this.get('content'); 
+			if (!content) return ;
+			alert(content['name']);        						
+			}.observes('content'),
+			
         })
       }),
 	  footerView: SC.ToolbarView.design({
-        layout: {bottom: 0, left: 0, right: 0, height: 50},
-        backgroundColor: 'black',
-        classNames: ['top-toolbar'],
+        layout: {bottom: 0, left: 0, right: 0, height: 50},        
 		childViews: 'copyright'.w(),
 		
 		copyright: SC.LabelView.design({
