@@ -77,23 +77,25 @@ Sproutdemo.mainPage = SC.Page.design({
 			
 			contentDidChange: function() { 			
 			var content = this.get('content'); 
-			if (!content) return ;			
-			if(content["name"]=="Company Profile") {
-				this.set('nowShowing','compprofile');
-			}
-			if(content["name"]=="Profile") {
-				this.set('nowShowing','profile');
-			}
-			       						
+			if (!content) return ;						
+			this.set('nowShowing',content["value"]);			       						
 			}.observes('content'),		      
 		  	
-			compprofile: Sproutdemo.CompProfile.design({
-		  
+			compprofile: Sproutdemo.CompProfile.design({		  
           	}),
 			
-			profile: Sproutdemo.Profile.design({
-		  
+			profile: Sproutdemo.Profile.design({						 
           	}),
+			
+			userprofile: Sproutdemo.UserProfile.design({		  
+          	}),
+			
+			subscriptions: Sproutdemo.Subscriptions.design({		  
+          	}),
+			
+			log: Sproutdemo.Log.design({		  
+          	}),
+			
 			
         })
       }),
