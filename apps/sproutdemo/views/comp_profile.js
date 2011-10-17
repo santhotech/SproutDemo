@@ -4,167 +4,177 @@
 
 Sproutdemo.CompProfile = SC.View.extend({
 	
-	childViews: 'title1 button1 section1 title2 button2 section2'.w(),
+	childViews: 'compTitle compButton compSection branchTitle branchButton branchSection'.w(),
 	
-	title1: SC.LabelView.design({
-		isVisibleBinding: 'Newapp.profileController.profileVisibility',
+	compTitle: SC.LabelView.design({		
 		layout: {left: 20, top: 20, width: 100, height: 25},
 		value: 'Company Profile',
 		fontWeight: 'bold'
 	}),
 	
-	button1: SC.ButtonView.design({
-		isVisibleBinding: 'Newapp.profileController.profileVisibility',
-		layout: {right: 20, width:100, top: 38, height: 24},
-		classNames: ['add-button'],
-		title: 'Add',
-		action: 'Newapp.profileController.button1Action'
+	compButton: SC.ButtonView.design({		
+		layout: {right: 20, width:100, top: 38, height: 24},		
+		title: 'Edit',		
 	}),
 	
-	section1: SC.View.design({
-		isVisibleBinding: 'Newapp.profileController.profileVisibility',
-		layout: {top: 50, right: 120, height: 200},
-		childViews: 'separator label1 text1 label11 label2 text2 label21 label3 text3 label31 label4 text4 label41'.w(),
-		separator: SC.SeparatorView.design({
-			layout: {left: 15, right: 120, height: 1, top: 0}
+	compSection: SC.View.design({		
+		layout: {top: 50, right: 120, height: 300},
+		childViews: 'lineRule compNameLbl compNameTxt gstrefLbl gstrefTxt addr1Lbl addr1Txt addr2Lbl addr2Txt postalLbl postalTxt stateLbl stateTxt countryLbl countryTxt'.w(),
+		
+		lineRule: SC.SeparatorView.design({
+			layout: {left: 15, right: 120, height: 3, top: 0}
 		}),
-		label1: SC.LabelView.design({
-			layout: {left: 20, top: 20, width: 100, height: 25},
+		
+		compNameLbl: SC.LabelView.design({
+			layout: {left: 20, top: 20, width: 100, height: 20},
 			value: 'Company Name'
 		}),
-		text1: SC.TextFieldView.design({
-			isVisibleBinding: 'Newapp.profileController.button1Mode',
-			layout: {left: 220, top: 20, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text1'
+		compNameTxt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 20, width: 200, height: 20},			
 		}),
-		label11: SC.LabelView.design({
-			isVisibleBinding: SC.Binding.not('Newapp.profileController.button1Mode'),
-			layout: {left: 220, top: 20, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text1'
-		}),
-		label2: SC.LabelView.design({
-			layout: {left: 20, top: 55, width: 100, height: 25},
+		
+		gstrefLbl: SC.LabelView.design({
+			layout: {left: 20, top: 45, width: 100, height: 20},
 			value: 'GST Reference'
 		}),
-		text2: SC.TextFieldView.design({
-			isVisibleBinding: 'Newapp.profileController.button1Mode',
-			layout: {left: 220, top: 55, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text2'
+		gstrefTxt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 45, width: 200, height: 20},			
 		}),
-		label21: SC.LabelView.design({
-			isVisibleBinding: SC.Binding.not('Newapp.profileController.button1Mode'),
-			layout: {left: 220, top: 55, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text2'
+		
+		addr1Lbl: SC.LabelView.design({
+			layout: {left: 20, top: 70, width: 100, height: 20},
+			value: 'Address Line 1'
 		}),
-		label3: SC.LabelView.design({
-			layout: {left: 20, top: 90, width: 100, height: 25},
-			value: 'Address'
+		addr1Txt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 70, width: 200, height: 20},			
 		}),
-		text3: SC.TextFieldView.design({
-			isVisibleBinding: 'Newapp.profileController.button1Mode',
-			layout: {left: 220, top: 90, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text3'
+		
+		
+		
+				addr2Lbl: SC.LabelView.design({
+			layout: {left: 20, top: 95, width: 100, height: 20},
+			value: 'Address Line 2'
 		}),
-		label31: SC.LabelView.design({
-			isVisibleBinding: SC.Binding.not('Newapp.profileController.button1Mode'),
-			layout: {left: 220, top: 90, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text3'
+		addr2Txt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 95, width: 200, height: 20},			
+		
 		}),
-		label4: SC.LabelView.design({
-			layout: {left: 20, top: 125, width: 100, height: 25},
+		
+		postalLbl: SC.LabelView.design({
+			layout: {left: 20, top: 120, width: 100, height: 20},
+			value: 'Postal Code'
+		}),
+		postalTxt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 120, width: 200, height: 20},			
+		
+		}),
+		
+		stateLbl: SC.LabelView.design({
+			layout: {left: 20, top: 145, width: 100, height: 20},
+			value: 'Postal Code'
+		}),
+		stateTxt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 145, width: 200, height: 20},			
+		
+		}),								
+		
+		countryLbl: SC.LabelView.design({
+			layout: {left: 20, top: 170, width: 100, height: 20},
 			value: 'Country'
 		}),
-		text4: SC.SelectFieldView.design({
-			isVisibleBinding: 'Newapp.profileController.button1Mode',
-			layout: {left: 220, top: 125, width: 100, height: 25},
-			objects: ['--Select--', 'India', 'Singapore', 'Australia'],
-			valueBinding: 'Newapp.profileController.text4'
+		countryTxt: SC.SelectFieldView.design({			
+			layout: {left: 220, top: 170, width: 200, height: 20},
+			objects: ['--Select--', 'India', 'China', 'USA'],			
 		}),
-		label41: SC.LabelView.design({
-			isVisibleBinding: SC.Binding.not('Newapp.profileController.button1Mode'),
-			layout: {left: 220, top: 125, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text4'
-		})
+		
+		
 	}),
 	
-	title2: SC.LabelView.design({
-		isVisibleBinding: 'Newapp.profileController.profileVisibility',
-		layout: {left: 20, top: 250, width: 100, height: 25},
+	branchTitle: SC.LabelView.design({		
+		layout: {left: 20, top: 250, width: 100, height: 20},
 		value: 'Branch Profile',
 		fontWeight: 'bold'
 	}),
 	
-	button2: SC.ButtonView.design({
-		isVisibleBinding: 'Newapp.profileController.profileVisibility',
-		layout: {right: 20, width:100, top: 268, height: 24},
-		classNames: ['add-button'],
-		title: 'Add',
-		action: 'Newapp.profileController.button2Action'
+	branchButton: SC.ButtonView.design({
+		layout: {right: 20, width:100, top: 268, height: 24},		
+		title: 'Add',		
 	}),
 	
-	section2: SC.View.design({
-		isVisibleBinding: 'Newapp.profileController.profileVisibility',
+	branchSection: SC.View.design({		
 		layout: {top: 280, right: 120, height: 200},
-		childViews: 'separator label1 text1 label11 label2 text2 label21 label3 text3 label31 label4 text4 label41'.w(),
-		separator: SC.SeparatorView.design({
+		childViews: 'linerule brnchNameLbl brnchNameTxt userLbl userTxt addr1Lbl addr1Txt addr2Lbl addr2Txt postalLbl postalTxt stateLbl stateTxt countryLbl countryTxt'.w(),
+		linerule: SC.SeparatorView.design({
 			layout: {left: 15, right: 120, height: 1, top: 0}
 		}),
-		label1: SC.LabelView.design({
-			layout: {left: 20, top: 20, width: 100, height: 25},
+		brnchNameLbl: SC.LabelView.design({
+			layout: {left: 20, top: 20, width: 100, height: 20},
 			value: 'Branch Name'
 		}),
-		text1: SC.TextFieldView.design({
-			isVisibleBinding: 'Newapp.profileController.button2Mode',
-			layout: {left: 220, top: 20, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text21'
+		brnchNameTxt: SC.TextFieldView.design({
+		
+			layout: {left: 220, top: 20, width: 100, height: 20},
+			
 		}),
-		label11: SC.LabelView.design({
-			isVisibleBinding: SC.Binding.not('Newapp.profileController.button2Mode'),
-			layout: {left: 220, top: 20, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text21'
-		}),
-		label2: SC.LabelView.design({
-			layout: {left: 20, top: 55, width: 100, height: 25},
+		
+		userLbl: SC.LabelView.design({
+			layout: {left: 20, top: 45, width: 100, height: 20},
 			value: 'No. of Users'
 		}),
-		text2: SC.TextFieldView.design({
-			isVisibleBinding: 'Newapp.profileController.button2Mode',
-			layout: {left: 220, top: 55, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text22'
+		userTxt: SC.TextFieldView.design({
+			
+			layout: {left: 220, top: 45, width: 100, height: 20},
+			
 		}),
-		label21: SC.LabelView.design({
-			isVisibleBinding: SC.Binding.not('Newapp.profileController.button2Mode'),
-			layout: {left: 220, top: 55, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text22'
+		
+		addr1Lbl: SC.LabelView.design({
+			layout: {left: 20, top: 70, width: 100, height: 20},
+			value: 'Address Line 1'
 		}),
-		label3: SC.LabelView.design({
-			layout: {left: 20, top: 90, width: 100, height: 25},
-			value: 'Address'
+		addr1Txt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 70, width: 200, height: 20},			
 		}),
-		text3: SC.TextFieldView.design({
-			isVisibleBinding: 'Newapp.profileController.button2Mode',
-			layout: {left: 220, top: 90, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text23'
+		
+		
+		
+				addr2Lbl: SC.LabelView.design({
+			layout: {left: 20, top: 95, width: 100, height: 20},
+			value: 'Address Line 2'
 		}),
-		label31: SC.LabelView.design({
-			isVisibleBinding: SC.Binding.not('Newapp.profileController.button2Mode'),
-			layout: {left: 220, top: 90, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text23'
+		addr2Txt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 95, width: 200, height: 20},			
+		
 		}),
-		label4: SC.LabelView.design({
-			layout: {left: 20, top: 125, width: 100, height: 25},
+		
+		postalLbl: SC.LabelView.design({
+			layout: {left: 20, top: 120, width: 100, height: 20},
+			value: 'Postal Code'
+		}),
+		postalTxt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 120, width: 200, height: 20},			
+		
+		}),
+		
+		stateLbl: SC.LabelView.design({
+			layout: {left: 20, top: 145, width: 100, height: 20},
+			value: 'Postal Code'
+		}),
+		stateTxt: SC.TextFieldView.design({			
+			layout: {left: 220, top: 145, width: 200, height: 20},			
+		
+		}),								
+		
+		countryLbl: SC.LabelView.design({
+			layout: {left: 20, top: 170, width: 100, height: 20},
 			value: 'Country'
 		}),
-		text4: SC.SelectFieldView.design({
-			isVisibleBinding: 'Newapp.profileController.button2Mode',
-			layout: {left: 220, top: 125, width: 100, height: 25},
-			objects: ['--Select--', 'India', 'Singapore', 'Australia'],
-			valueBinding: 'Newapp.profileController.text24'
+		countryTxt: SC.SelectFieldView.design({			
+			layout: {left: 220, top: 170, width: 200, height: 20},
+			objects: ['--Select--', 'India', 'China', 'USA'],			
 		}),
-		label41: SC.LabelView.design({
-			isVisibleBinding: SC.Binding.not('Newapp.profileController.button2Mode'),
-			layout: {left: 220, top: 125, width: 100, height: 25},
-			valueBinding: 'Newapp.profileController.text24'
-		})
+		
+		
+		
+		
 	})
 }) ;

@@ -71,7 +71,7 @@ Sproutdemo.mainPage = SC.Page.design({
 
         bottomRightView: SC.ContainerView.design({
           backgroundColor: 'white',
-          layout: {top:80, left:60, width: 500, height: 500},
+          layout: {top:80, left:60, width: 500},
 			classNames: 'chkBorder',
 						
 			nowShowing: 'profile',	
