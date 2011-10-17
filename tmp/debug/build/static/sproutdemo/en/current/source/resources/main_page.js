@@ -16,28 +16,31 @@ Sproutdemo.mainPage = SC.Page.design({
         layout: {top: 0, left: 0, right: 0, height: 100},
         backgroundColor: 'black',
         classNames: ['top-toolbar'],
-        childViews: 'select home profile logout'.w(),
+        childViews: 'logoLbl languageSlct homeBtn profileBtn logoutBtn'.w(),
         
-        select: SC.SelectFieldView.design({
-          layout: {right:20, top: 20, height: 20, width: 100},
-          objects: ['English', 'German', 'French']
+		logoLbl: SC.LabelView.design({
+			layout: {left:10, top: 15, height: 20, width: 200},
+			displayTitle: "Company Logo",
+			classNames: 'logo'
+		}),
+		
+        languageSlct: SC.SelectFieldView.design({
+          layout: {right:10, top: 15, height: 20, width: 100},
+          objects: ['English', 'Hindi', 'Chinese']
         }),
 
-        home: SC.ButtonView.design({
-          layout: {right: 180, bottom: 10, height: 25, width: 75},
-		  classNames:['toolbar-button'],
+        homeBtn: SC.ButtonView.design({
+          layout: {right: 180, bottom: 10, height: 25, width: 75},		  
           title: 'Home'
         }),
 
-        profile: SC.ButtonView.design({
-          layout: {right: 105, bottom: 10, height: 25, width: 75},
-		  classNames:['toolbar-button'],
+        profileBtn: SC.ButtonView.design({
+          layout: {right: 95, bottom: 10, height: 25, width: 75},		  
           title: 'Profile'
         }),
 
-        logout: SC.ButtonView.design({
-          layout: {right: 30, bottom: 10, height: 25, width: 75},
-          classNames:['toolbar-button'],
+        logoutBtn: SC.ButtonView.design({
+          layout: {right: 10, bottom: 10, height: 25, width: 75},         
 		  title: 'Logout'
         })
       }),
