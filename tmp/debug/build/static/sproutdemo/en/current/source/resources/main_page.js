@@ -11,8 +11,8 @@ Sproutdemo.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'toolbarView splitView bottomToolbar'.w(),
-      toolbarView: SC.ToolbarView.design({
+    childViews: 'headerView bodyView footerView'.w(),
+      headerView: SC.ToolbarView.design({
         layout: {top: 0, left: 0, right: 0, height: 100},
         backgroundColor: 'black',
         classNames: ['top-toolbar'],
@@ -45,7 +45,7 @@ Sproutdemo.mainPage = SC.Page.design({
         })
       }),
 
-      splitView: SC.SplitView.design({
+      bodyView: SC.SplitView.design({
         layout: {top:100, left: 0, right: 0, bottom: 50},
         topLeftMinThickness: 150,
         topLeftMaxThickness: 150,
@@ -54,14 +54,14 @@ Sproutdemo.mainPage = SC.Page.design({
         canCollapseViews: NO,
         topLeftView: SC.View.design({
           backgroundColor: 'gray',
-          childViews: 'list'.w(),
+          childViews: 'menuList'.w(),
 
-          list: SC.ListView.design({
+          menuList: SC.ListView.design({
             layout: {top: 0, left: 0, right: 0, height: 125},
             rowHeight: 25,
 			contentValueKey: 'name',
-            content: [
-				SC.Object.create({name: 'Profile', value: 'profile'}), SC.Object.create({name: 'Company Profile', value: 'company_profile'}), SC.Object.create({name: 'User Profile', value: 'user_profile'}), SC.Object.create({name: 'Subscriptions', value: 'subscriptions'}), SC.Object.create({name: 'Log', value: 'log'})]
+            contentBinding: 'Sproutdemo.menuController.arrangedObjects',
+		  	selectionBinding: 'Sproutdemo.menuController.selection',		  
           })
         }),
 
@@ -70,7 +70,7 @@ Sproutdemo.mainPage = SC.Page.design({
           
         })
       }),
-	  bottomToolbar: SC.ToolbarView.design({
+	  footerView: SC.ToolbarView.design({
         layout: {bottom: 0, left: 0, right: 0, height: 50},
         backgroundColor: 'black',
         classNames: ['top-toolbar'],
