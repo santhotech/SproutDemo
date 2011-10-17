@@ -5,6 +5,9 @@
 /*globals Sproutdemo */
 sc_require('comp_profile');
 sc_require('profile');
+sc_require('user_profile');
+sc_require('subscriptions');
+sc_require('log');
 // This page describes the main user interface for your application.  
 Sproutdemo.mainPage = SC.Page.design({
 

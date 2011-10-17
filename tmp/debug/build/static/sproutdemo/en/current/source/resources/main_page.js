@@ -5,6 +5,9 @@
 /*globals Sproutdemo */
 sc_require('comp_profile');
 sc_require('profile');
+sc_require('user_profile');
+sc_require('subscriptions');
+sc_require('log');
 // This page describes the main user interface for your application.  
 Sproutdemo.mainPage = SC.Page.design({
 
@@ -77,25 +80,25 @@ Sproutdemo.mainPage = SC.Page.design({
 			
 			contentDidChange: function() { 			
 			var content = this.get('content'); 
-			if (!content) return ;
-			alert(content["name"]);
-			
-			if(content["name"]=="Company Profile") {
-				this.set('nowShowing','compprofile');
-			}
-			if(content["name"]=="Profile") {
-				this.set('nowShowing','profile');
-			}
-			       						
+			if (!content) return ;						
+			this.set('nowShowing',content["value"]);			       						
 			}.observes('content'),		      
 		  	
-			compprofile: Sproutdemo.CompProfile.design({
-		  
+			compprofile: Sproutdemo.CompProfile.design({		  
           	}),
 			
-			profile: Sproutdemo.Profile.design({
-		  
+			profile: Sproutdemo.Profile.design({						 
           	}),
+			
+			userprofile: Sproutdemo.UserProfile.design({		  
+          	}),
+			
+			subscriptions: Sproutdemo.Subscriptions.design({		  
+          	}),
+			
+			log: Sproutdemo.Log.design({		  
+          	}),
+			
 			
         })
       }),

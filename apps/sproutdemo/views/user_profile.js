@@ -2,20 +2,19 @@
  * @author santhosh
  */
 
-Sproutdemo.Profile = SC.View.extend({
+Sproutdemo.UserProfile = SC.View.extend({
 	
 	childViews: 'pageHeadLbl pageContentLbl'.w(),
 	pageHeadLbl: SC.LabelView.design({
 		layout: {left:10, top: 15, height: 20, width: 200},
-		displayTitle: "Profile Page",
+		displayTitle: "User Profile Page",
 	}),
 	
 		pageContentLbl: SC.LabelView.design({
 		layout: {left:10, top: 45, height: 20, width: 400},
-		displayTitle: "This is where the main profile is viewed and it can be manipulated.",
+		displayTitle: "This is the user profile page where all the stuff related to user is done.",
 	})	
 
 		
 		
 }) ;
-; if ((typeof SC !== 'undefined') && SC && SC.Module && SC.Module.scriptDidLoad) SC.Module.scriptDidLoad('sproutdemo');
