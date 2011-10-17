@@ -3,3 +3,16 @@ $theme: '.ace.sproutdemo';.logo {
 	font-size: 16px !important;
 	font-weight:bold;
 }
+.submenu {
+	font-size: 14px !important;
+	font-weight:bold;
+	background: #000000;
+	text-align:center;
+	color: #ffffff;
+}
+
+.submenu:hover {	
+	background: #ffffff;
+	color: #000000;
+	
+}

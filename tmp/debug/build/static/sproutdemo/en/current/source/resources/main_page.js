@@ -18,8 +18,7 @@ Sproutdemo.mainPage = SC.Page.design({
     childViews: 'headerView bodyView footerView'.w(),
       headerView: SC.ToolbarView.design({
         layout: {top: 0, left: 0, right: 0, height: 100},
-        backgroundColor: 'black',
-        classNames: ['top-toolbar'],
+        backgroundColor: 'black',        
         childViews: 'logoLbl languageSlct homeBtn profileBtn logoutBtn'.w(),
         
 		logoLbl: SC.LabelView.design({
@@ -110,8 +109,7 @@ Sproutdemo.mainPage = SC.Page.design({
 		childViews: 'copyright'.w(),
 		
 		copyright: SC.LabelView.design({
-			layout: {left: 20, width: 140, centerY: 0, height: 25},
-			classNames: ['copyright'],
+			layout: {left: 20, width: 140, centerY: 0, height: 25},			
 			value: 'icloud Feedback @ 2011'
 		})
 	  })

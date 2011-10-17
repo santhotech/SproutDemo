@@ -4,3 +4,18 @@
   font-weight: bold;
 }
 
+/* line 6, tmp/chance/e14c105d229bee1f6f41affb7ce1a1c1.scss */
+.submenu {
+  font-size: 14px !important;
+  font-weight: bold;
+  background: #000000;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* line 14, tmp/chance/e14c105d229bee1f6f41affb7ce1a1c1.scss */
+.submenu:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
