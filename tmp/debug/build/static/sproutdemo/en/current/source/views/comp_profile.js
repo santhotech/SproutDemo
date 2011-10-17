@@ -2,7 +2,7 @@
  * @author santhosh
  */
 
-Sproutdemo.CompanyProfile = SC.View.extend({
+Sproutdemo.CompProfile = SC.View.extend({
 	
 	childViews: 'title1 button1 section1 title2 button2 section2'.w(),
 	
@@ -168,3 +168,4 @@ Sproutdemo.CompanyProfile = SC.View.extend({
 		})
 	})
 }) ;
+; if ((typeof SC !== 'undefined') && SC && SC.Module && SC.Module.scriptDidLoad) SC.Module.scriptDidLoad('sproutdemo');

@@ -3,7 +3,8 @@
 // Copyright: @2011 My Company, Inc.
 // ==========================================================================
 /*globals Sproutdemo */
-
+sc_require('comp_profile');
+sc_require('profile');
 // This page describes the main user interface for your application.  
 Sproutdemo.mainPage = SC.Page.design({
 
@@ -65,20 +66,42 @@ Sproutdemo.mainPage = SC.Page.design({
           })
         }),
 
-        bottomRightView: SC.View.design({
+        bottomRightView: SC.ContainerView.design({
           backgroundColor: 'white',
-          layout: {top:80, left:60},
+          layout: {top:80, left:60, width: 500, height: 500},
 			classNames: 'chkBorder',
-			contentBinding: 'Sproutdemo.optionController.content',
 						
+			nowShowing: 'profile',	
+			contentBinding: 'Sproutdemo.optionController.content',
+			
+			
 			contentDidChange: function() { 			
 			var content = this.get('content'); 
 			if (!content) return ;
-			alert(content['name']);        						
-			}.observes('content'),
+			alert(content["name"]);
+			
+			if(content["name"]=="Company Profile") {
+				this.set('nowShowing','compprofile');
+			}
+			if(content["name"]=="Profile") {
+				this.set('nowShowing','profile');
+			}
+			       						
+			}.observes('content'),		      
+		  	
+			compprofile: Sproutdemo.CompProfile.design({
+		  
+          	}),
+			
+			profile: Sproutdemo.Profile.design({
+		  
+          	}),
 			
         })
       }),
+	  
+	  
+	  
 	  footerView: SC.ToolbarView.design({
         layout: {bottom: 0, left: 0, right: 0, height: 50},        
 		childViews: 'copyright'.w(),
